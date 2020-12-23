@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const currentTask = process.env.npm_lifecycle_event;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,7 +12,7 @@ const config = {
     path: path.resolve(__dirname, 'build'),
   },
   mode: 'development',
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'] },
   module: {
     rules: [
       {
@@ -20,7 +21,7 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: [
           {

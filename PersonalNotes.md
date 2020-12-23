@@ -4,6 +4,9 @@
 
 # Typescript
 
+- Creating React and TypeScript apps with Webpack
+  > https://www.carlrippon.com/creating-react-and-typescript-apps-with-webpack/
+
 # Webpack Tutorials
 
 - Config Webpack + React + JavaScript/TypeScript
@@ -45,3 +48,22 @@ Sometimes when we're developing we have multiple environments. So we have our be
 ## check for depricated webpack plugins
 
 > node --trace-deprecation ./node_modules/.bin/webpack
+
+## html-webpack-plugin
+
+Helps to generate html files with cached files (below)
+
+## Cache busting string for bundle.js and main.css files
+
+Example:
+
+```
+ output: {
+    filename: 'bundle.[fullhash].js',
+    path: path.resolve(__dirname, 'build'),
+  },
+```
+
+```
+  new MiniCssExtractPlugin({ filename: 'main.[fullhash].css' })
+```
